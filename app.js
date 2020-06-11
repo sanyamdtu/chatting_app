@@ -37,5 +37,5 @@ io.on("connection", (socket) => {
 
 //set static folder
 app.use(express.static(path.join(__dirname, "public")));
-const PORT = 5000 || process.env.PORT;
-server.listen(PORT);
+
+server.listen(process.env.PORT);
