@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //socket io
 io.on("connection", (socket) => {
-  console.log("new WS connection");
   socket.on("join_room", (username, room) => {
     socket.join(room);
     user_functions.adduser(socket.id, username, room);
+    io.emit("users", user_functions.getusers_room(room));
     socket.emit("message", format(chat_bot, `${username} has Joined the chat`));
     socket.on("chat_message", (message) => {
       const user = user_functions.getuser(socket.id);
@@ -27,6 +27,7 @@ io.on("connection", (socket) => {
     socket.on("disconnect", () => {
       const user = user_functions.getuser(socket.id);
       user_functions.deleteuser(user.id);
+      io.emit("users", user_functions.getusers_room(room));
       io.emit(
         "message",
         format(chat_bot, `${user.username} has left the chat`)
@@ -38,4 +39,4 @@ io.on("connection", (socket) => {
 //set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
-server.listen(process.env.PORT);
+server.listen(5000 || process.env.PORT);
