@@ -1,20 +1,20 @@
 {
-    "name": "andrew_mead_chatting",
-    "version": "1.0.0",
-    "description": "",
-    "main": "app.js",
-    "scripts": {
-        "start": "node app",
-        "dev": "nodemon app"
-    },
-    "author": "sanyam srivastava",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.17.1",
-        "moment": "^2.25.1",
-        "socket.io": "^2.3.0"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.3"
-    }
+  "name": "sanyam_chatting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app",
+    "dev": "nodemon app"
+  },
+  "author": "sanyam srivastava",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.25.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
 }
